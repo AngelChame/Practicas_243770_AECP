@@ -1,0 +1,22 @@
+package com.angel.camara_practica
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
+import com.angel.camara_practica.screens.TabsScreen
+
+import com.angel.camara_practica.viewmodels.ScannerViewModel
+import kotlin.getValue
+
+class MainActivity : ComponentActivity() {
+    private val viewModel: ScannerViewModel by viewModels()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            TabsScreen(viewModel)
+        }
+    }
+}
